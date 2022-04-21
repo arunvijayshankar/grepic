@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -o grepic grepic.c
-./grepic somestring poem.txt
+gcc -o ./target/grepic ./src/grepic*
+./target/grepic astring poem.txt
