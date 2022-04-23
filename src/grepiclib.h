@@ -1,8 +1,8 @@
 // struct to store config variables
-struct config {
+typedef struct config {
     char *query;
     char *filename;
-};
+} CONFIG;
 
-struct config parse_config(int, char **);
-void run(struct config);
+CONFIG parse_config(int, char **);
+void run(CONFIG);
