@@ -7,10 +7,11 @@
 
 LinkedList * search(char *, FILE *);
 LinkedList * search_case_insensitive(char *, FILE *);
-char * toLower(char *);
 
 CONFIG parse_config(int argc, char **args) {
-    assert(argc == 3 && "Not enough arguments");
+    if (argc < 3) {
+        fprintf(stderr, "Not enough arguments\n");
+    }
     CONFIG nConfig;
     nConfig.query = args[1];
     nConfig.filename = args[2];
@@ -21,7 +22,7 @@ CONFIG parse_config(int argc, char **args) {
 void run(CONFIG nConfig) {
     FILE *f = fopen(nConfig.filename, "r"); 
     if (f == NULL) {
-        printf("Error opening file `%s`\n", nConfig.filename);
+        fprintf(stderr, "Error opening file `%s`\n", nConfig.filename);
         return;
     }
     printf("With text:\n");

@@ -9,3 +9,4 @@ typedef struct config {
 
 CONFIG parse_config(int, char **);
 void run(CONFIG);
+char * toLower(char *);
